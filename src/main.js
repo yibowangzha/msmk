@@ -6,6 +6,9 @@ import './plugins/vant.js'
 import './plugins/element.js'
 import axios from "./utils/request"
 import rem from "@/assets/rem"
+import "@/css/common.css"
+import "@/assets/font/iconfont.css"
+import "@/directives" //全局自定义指令
 Vue.prototype.$http=axios
 Vue.config.productionTip = false
 

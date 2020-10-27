@@ -1,6 +1,12 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import Home from '../views/Home.vue'
+// import Home from '../views/Home.vue'
+import Home from "@/views/Home"
+import Index from "@/components/Index"
+import Couser from "@/components/Couser"
+import Exercise from "@/components/Exercise"
+import Lar from "@/components/Lar"
+import My from "@/components/My"
 
 Vue.use(VueRouter)
 
@@ -8,18 +14,38 @@ const routes = [
   {
     path: '/',
     name: 'Home',
-    component: Home
+    component: Home,
+    redirect:"/index", //默认显示index页面
+    children:[  
+        {
+          path:"/index",  //首页路由
+          name:"Index",
+          component:Index
+        },
+        {
+          path:"/couser",  //课程路由
+          name:"couser",
+          component:Couser
+        },
+        {
+          path:"/lar",  //约课记录路由
+          name:"Lar",
+          component:Lar
+        },
+        {
+          path:"/exercise",  //练习路由
+          name:"exercise",
+          component:Exercise
+        },
+        {
+          path:"/my",  //我的路由
+          name:"My",
+          component:My
+        },
+
+    ]
   },
-  {
-    path: '/about',
-    name: 'About',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: function () {
-      return import(/* webpackChunkName: "about" */ '../views/About.vue')
-    }
-  }
+ 
 ]
 
 const router = new VueRouter({
