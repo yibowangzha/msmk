@@ -4,7 +4,9 @@ import router from './router'
 import store from './store'
 import './plugins/vant.js'
 import './plugins/element.js'
-
+import axios from "./utils/request"
+import rem from "@/assets/rem"
+Vue.prototype.$http=axios
 Vue.config.productionTip = false
 
 new Vue({
