@@ -2,6 +2,8 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 // import Home from '../views/Home.vue'
 import Home from "@/views/Home"
+import login from "@/views/login"
+import mima from "@/views/mima"
 import Index from "@/components/Index"
 import Couser from "@/components/Couser"
 import Exercise from "@/components/Exercise"
@@ -40,10 +42,27 @@ const routes = [
         {
           path:"/my",  //我的路由
           name:"My",
-          component:My
+          component:My,
+          beforeEnter(to,from,next){
+            if(sessionStorage.getItem('token')){
+              next()
+            }else{
+              next('/login')
+            }
+          }
         },
 
     ]
+  },
+  {
+    path: '/login',
+    name: 'Login',
+    component: login,
+  },
+  {
+    path: '/mima',
+    name: 'Mima',
+    component: mima,
   },
  
 ]

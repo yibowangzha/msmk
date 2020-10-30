@@ -41,8 +41,8 @@ export default {
               },
                {
                   font:"iconfont icon-wodedangxuan",
-                  path:"/my",
-                   text:"我的",
+                  text:"我的",
+                   path:"/my",
               }
           ]
         
